@@ -1,0 +1,31 @@
+﻿@model Lab2.Models.ArbolEntero
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Contenido del Arbol</h2>
+@Html.TextAreaFor(m => TempData["Arbol"])
+
+<h4></h4>
+<h4></h4>
+<br />
+
+@using (Html.BeginForm("Eliminar_Nodo", "ArbolEntero"))
+{
+    <label>Ingrese el numero que desea eliminar...</label>
+    <br />
+    @Html.TextBox("TBEliminar")
+    <input type="submit" value="Eliminar" />
+}
+
+<br />
+@using (Html.BeginForm("Insertar_Nodo", "ArbolEntero"))
+{
+    <label>Ingrese el numero que desea ingresar...</label>
+    <br />
+    @Html.TextBox("TBAgregar")
+    <input type="submit" value="Insertar" />
+
+}
+
